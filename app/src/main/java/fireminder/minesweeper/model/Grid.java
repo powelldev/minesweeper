@@ -48,6 +48,13 @@ public class Grid {
     return tile;
   }
 
+  public void peekAtTile(Point point) {
+    Tile tile = this.getTileAt(point);
+    if (!tile.isRevealed()) {
+      tile.toggleReveal();
+    }
+  }
+
   private void decideActionFor(Tile tile, Point point) {
     switch (tile.getType()) {
       case EMPTY:
@@ -57,8 +64,7 @@ public class Grid {
         // no need to do anything here
         break;
       case MINE:
-        // end game
-        // TODO
+        revealMines();
         break;
     }
   }
@@ -167,9 +173,12 @@ public class Grid {
     switch (grid[point.x][point.y].getType()) {
       case EMPTY:
         grid[point.x][point.y] = new NumberTile();
+        // fall-through to be incremented
       case NUMBER:
         ((NumberTile) grid[point.x][point.y]).increment();
         break;
+      case MINE:
+        // ignore
       default:
         break;
     }
@@ -211,6 +220,37 @@ public class Grid {
     return grid[x][y];
   }
 
+  public boolean hasWon() {
+    for (int i = 0; i < grid.length; i++) {
+      for (int j = 0; j < grid.length; j++) {
+        if (grid[i][j].isRevealed() && grid[i][j].type.equals(Tile.Type.MINE)) {
+          return false;
+        }
+        else if (!grid[i][j].isRevealed() && grid[i][j].type.equals(Tile.Type.NUMBER)) {
+          return false;
+        }
+      }
+    }
+    return true;
+  }
+
+  private void revealMines() {
+    for (int i = 0; i < grid.length; i++) {
+      for (int j = 0; j < grid.length; j++) {
+        Tile tile = grid[i][j];
+        if (tile.type.equals(Tile.Type.MINE)) {
+          peekAtTile(new Point(i, j));
+        }
+      }
+    }
+  }
+  public void cheat() {
+    for (int i = 0; i < grid.length; i++) {
+      for (int j = 0; j < grid.length; j++) {
+        peekAtTile(new Point(i, j));
+      }
+    }
+  }
 
   public static class Builder {
     Grid grid;

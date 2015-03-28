@@ -8,26 +8,26 @@ import fireminder.minesweeper.model.Tile;
 
 public class TileButton extends Button {
 
-    private Point point;
+  private Point point;
 
-    public TileButton(Context context, Point point) {
-        super(context);
-        this.point = point;
-    }
+  public TileButton(Context context, Point point) {
+    super(context);
+    this.point = point;
+  }
 
   /**
    * Forces the button to display the state of this tile
    */
-    public void updateView(Tile tile) {
-        if (tile.isRevealed()) {
-            this.setText(tile.toString());
-        } else {
-            this.setText("");
-        }
+  public void updateView(Tile tile) {
+    if (tile.isRevealed()) {
+      this.setText(tile.toString());
+    } else {
+      this.setText("");
     }
+  }
 
-    public Point getPoint() {
-        return point;
-    }
+  public Point getPoint() {
+    return point;
+  }
 
 }

@@ -7,4 +7,13 @@
     <string name="pref_difficulty_title">Set difficulty of minefield</string>
     <string name="pref_difficulty_summary">Choose number of mines and grid size.</string>
     <string name="pref_difficulty_default">HARD</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="validate">Validate</string>
+    <string name="cheat">Cheat</string>
+    <string name="new_game">New Game</string>
+    <string name="failure">Failure :(</string>
+    <string name="victory">Victory</string>
+    <string name="glhf">gl;hf</string>
 </resources>

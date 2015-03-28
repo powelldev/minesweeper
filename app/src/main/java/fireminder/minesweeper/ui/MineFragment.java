@@ -9,6 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridLayout;
+import android.widget.Toast;
 
 import fireminder.minesweeper.Difficulty;
 import fireminder.minesweeper.PrefUtils;
@@ -84,4 +85,23 @@ public class MineFragment extends Fragment {
     }
   };
 
+  public void newGame() {
+    createNewGame();
+    Toast.makeText(getActivity(), getString(R.string.glhf), Toast.LENGTH_SHORT).show();
+  }
+
+  public void validate() {
+    boolean won = grid.hasWon();
+    if (won) {
+      Toast.makeText(getActivity(), getString(R.string.victory), Toast.LENGTH_SHORT).show();
+    } else {
+      Toast.makeText(getActivity(), getString(R.string.failure), Toast.LENGTH_SHORT).show();
+      cheat();
+    }
+  }
+
+  public void cheat() {
+    grid.cheat();
+    gridView.updateView(grid);
+  }
 }
