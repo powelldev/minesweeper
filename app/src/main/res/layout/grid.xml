@@ -1,0 +1,8 @@
+<fireminder.minesweeper.ui.MinefieldView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_columnSpan="8"
+    android:layout_rowSpan="8"
+    android:id="@+id/grid"
+    android:background="@android:color/darker_gray"
+/>

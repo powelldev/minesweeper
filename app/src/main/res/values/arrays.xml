@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pref_difficulty_entries">
+        <item>Easy (3x3 grid, 1 mine)</item>
+        <item>Medium (5x5 grid, 3 mines)</item>
+        <item>Hard (8x8 grid, 10 mine) (Yes, this is hard for me :D)</item>
+    </string-array>
+    <string-array name="pref_difficulty_values">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Hard</item>
+    </string-array>
+</resources>

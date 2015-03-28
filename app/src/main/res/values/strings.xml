@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">minesweeper</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="pref_difficulty">pref_difficulty</string>
+    <string name="pref_difficulty_title">Set difficulty of minefield</string>
+    <string name="pref_difficulty_summary">Choose number of mines and grid size.</string>
+    <string name="pref_difficulty_default">HARD</string>
+</resources>
